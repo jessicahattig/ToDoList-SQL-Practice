@@ -7,13 +7,15 @@ namespace ToDoList.Models
   {
     public string Description { get; set; }
     public int Id { get; }
-    private static List<Item> _instances = new List<Item> { };
 
     public Item(string description)
     {
       Description = description;
-      _instances.Add(this);
-      Id = _instances.Count;
+    }
+    public Item(string description, int id)
+    {
+      Description = description;
+      Id = id;
     }
 
     public static List<Item> GetAll()
@@ -37,7 +39,7 @@ namespace ToDoList.Models
       conn.Close();
       if (conn != null)
       {
-          conn.Dispose();
+        conn.Dispose();
       }
       return allItems;
     }
