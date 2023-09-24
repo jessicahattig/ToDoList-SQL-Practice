@@ -100,6 +100,21 @@ namespace ToDoList.Tests
     //Assert
     CollectionAssert.AreEqual(newList, result);
   }
+  
+    [TestMethod] // updated test of Find() below.
+    public void Find_ReturnsCorrectItemFromDatabase_Item()
+    {
+      //Arrange
+      Item newItem = new Item("Mow the lawn");
+      newItem.Save();
+      Item newItem2 = new Item("Wash dishes");
+      newItem2.Save();
+
+      //Act
+      Item foundItem = Item.Find(newItem.Id);
+      //Assert
+      Assert.AreEqual(newItem, foundItem);
+    }
 
 
 
