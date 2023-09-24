@@ -17,20 +17,22 @@ namespace ToDoList.Models
       Description = description;
       Id = id;
     }
-
+    
     public override bool Equals(System.Object otherItem)
     {
-      if (!(otherItem is Item))
-      {
-        return false;
-      }
-      else
-      {
-        Item newItem = (Item) otherItem;
-        bool descriptionEquality = (this.Description == newItem.Description);
-        return descriptionEquality;
-      }
+    if (!(otherItem is Item))
+    {
+      return false;
     }
+    else
+    {
+      Item newItem = (Item) otherItem;
+      bool idEquality = (this.Id == newItem.Id);
+      bool descriptionEquality = (this.Description == newItem.Description);
+      return (idEquality && descriptionEquality);
+    }
+  }
+
     
     public override int GetHashCode()
     {
