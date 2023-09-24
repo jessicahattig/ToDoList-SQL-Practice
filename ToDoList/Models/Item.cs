@@ -45,10 +45,12 @@ namespace ToDoList.Models
     }
 
 
-    public static void ClearAll()
-    {
-      
+  public static void ClearAll()
+  {
+    MySqlConnection conn = new MySqlConnection(DBConfiguration.ConnectionString);
+    conn.Open();
     }
+
     public static Item Find(int searchId)
     {
           // Temporarily returning placeholder item to get beyond compiler errors until we refactor to work with database.
