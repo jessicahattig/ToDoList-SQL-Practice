@@ -44,6 +44,20 @@ namespace ToDoList.Tests
       CollectionAssert.AreEqual(newList, result);
 }
 
+    [TestMethod]
+    public void ReferenceTypes_ReturnsTrueBecauseBothItemsAreSameReference_bool()
+    {
+      // Arrange, Act
+      Item firstItem = new Item("Mow the lawn");
+      Item copyOfFirstItem = firstItem;
+      copyOfFirstItem.Description = "Learn about C#";
+
+      // Assert
+      Assert.AreEqual(firstItem.Description, copyOfFirstItem.Description);
+    }
+
+
+
   }
 }
 
