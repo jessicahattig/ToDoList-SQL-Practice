@@ -56,6 +56,17 @@ namespace ToDoList.Tests
       Assert.AreEqual(firstItem.Description, copyOfFirstItem.Description);
     }
 
+    [TestMethod]
+    public void ValueTypes_ReturnsTrueBecauseValuesAreTheSame_Bool()
+    {
+      // Arrange, Act
+      int test1 = 1;
+      int test2 = 1;
+
+      // Assert
+      Assert.AreEqual(test1, test2);
+    }
+
 
 
   }
