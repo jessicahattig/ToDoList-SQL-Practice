@@ -45,6 +45,7 @@ namespace ToDoList.Models
     }
 
 
+
   public static void ClearAll()
   {
     MySqlConnection conn = new MySqlConnection(DBConfiguration.ConnectionString);
