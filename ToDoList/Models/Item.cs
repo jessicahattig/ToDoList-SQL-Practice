@@ -49,6 +49,9 @@ namespace ToDoList.Models
   {
     MySqlConnection conn = new MySqlConnection(DBConfiguration.ConnectionString);
     conn.Open();
+    
+    MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+    cmd.CommandText = "DELETE FROM items;";
     }
 
     public static Item Find(int searchId)
